@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ================================================================
     // 8. SCROLLSPY & SMOOTH SCROLLING
     // ================================================================
-    const sections = document.querySelectorAll('section, header');
+    const spySections = document.querySelectorAll('section, header');
     const navItems = document.querySelectorAll('.nav-links a');
 
     const scrollSpyObserver = new IntersectionObserver((entries) => {
@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.3, rootMargin: "-10% 0px -50% 0px" });
 
-    sections.forEach(section => scrollSpyObserver.observe(section));
+    spySections.forEach(section => scrollSpyObserver.observe(section));
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
