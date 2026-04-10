@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // ================================================================
     const phrases = [
         "MSc Remote Sensing · Geomatics Eng.",
+        "Modern Physics Explorer",
         "Geospatial Data Scientist",
-        "Computer Vision Engineer",
-        "AI & Deep Learning Specialist",
+        "Computer Vision Researcher",
         "Full Stack Developer",
     ];
     let i = 0;
