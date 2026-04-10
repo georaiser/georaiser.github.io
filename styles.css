@@ -638,6 +638,16 @@ body {
     animation: badge-float 5.5s ease-in-out infinite 1.5s;
 }
 
+.badge-5 {
+    top: 65%;
+    right: -2%;
+    border-color: rgba(245, 158, 11, 0.5);
+    color: var(--accent-orange);
+    background: rgba(12, 16, 23, 0.9);
+    animation: badge-float 6s ease-in-out infinite 2.5s;
+    font-size: 0.76rem;
+}
+
 @keyframes badge-float {
     0%, 100% { transform: translateY(0); }
     50%       { transform: translateY(-8px); }
