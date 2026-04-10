@@ -246,30 +246,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ================================================================
-    // 8. SCROLLSPY & SMOOTH SCROLLING
+    // 8. SMOOTH SCROLLING
     // ================================================================
-    const spySections = document.querySelectorAll('section, header');
-    const navItems = document.querySelectorAll('.nav-links a');
-
-    const scrollSpyObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                let currentId = entry.target.getAttribute('id');
-                if (entry.target.tagName.toLowerCase() === 'header') currentId = '';
-                
-                navItems.forEach(link => {
-                    link.classList.remove('active-link');
-                    if (currentId && link.getAttribute('href') === `#${currentId}`) {
-                        link.classList.add('active-link');
-                    } else if (!currentId && link.getAttribute('href') === '#') {
-                        link.classList.add('active-link');
-                    }
-                });
-            }
-        });
-    }, { threshold: 0.3, rootMargin: "-10% 0px -50% 0px" });
-
-    spySections.forEach(section => scrollSpyObserver.observe(section));
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
