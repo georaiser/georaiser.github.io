@@ -2,10 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 1. Typewriter Effect
     const phrases = [
-        "Full Stack Developer",
         "Geospatial Data Scientist",
-        "AI / Vision Enthusiast",
-        "Enterprise Architect"
+        "Full Stack Developer (Junior)",
+        "AI / Vision Enthusiast"
     ];
     let i = 0;
     let j = 0;
