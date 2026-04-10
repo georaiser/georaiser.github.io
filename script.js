@@ -219,26 +219,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const filterValue = btn.getAttribute('data-filter');
 
-            projectCards.forEach(card => {
+            projectCards.forEach((card, index) => {
                 const categories = card.getAttribute('data-category').split(' ');
                 const show = filterValue === 'all' || categories.includes(filterValue);
 
-                card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
 
                 if (show) {
                     card.style.display = 'flex';
-                    requestAnimationFrame(() => {
+                    setTimeout(() => {
                         card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    });
+                        card.style.transform = 'scale(1)';
+                    }, 50);
                 } else {
                     card.style.opacity = '0';
-                    card.style.transform = 'translateY(10px)';
+                    card.style.transform = 'scale(0.95)';
                     setTimeout(() => {
                         if (card.style.opacity === '0') {
                             card.style.display = 'none';
                         }
-                    }, 300);
+                    }, 400);
                 }
             });
         });
@@ -246,8 +246,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ================================================================
-    // 8. SMOOTH SCROLLING
+    // 8. SCROLLSPY & SMOOTH SCROLLING
     // ================================================================
+    const sections = document.querySelectorAll('section, header');
+    const navItems = document.querySelectorAll('.nav-links a');
+
+    const scrollSpyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                let currentId = entry.target.getAttribute('id');
+                if (entry.target.tagName.toLowerCase() === 'header') currentId = '';
+                
+                navItems.forEach(link => {
+                    link.classList.remove('active-link');
+                    if (currentId && link.getAttribute('href') === `#${currentId}`) {
+                        link.classList.add('active-link');
+                    } else if (!currentId && link.getAttribute('href') === '#') {
+                        link.classList.add('active-link');
+                    }
+                });
+            }
+        });
+    }, { threshold: 0.3, rootMargin: "-10% 0px -50% 0px" });
+
+    sections.forEach(section => scrollSpyObserver.observe(section));
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');

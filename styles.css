@@ -1247,6 +1247,16 @@ body {
     background: rgba(6, 182, 212, 0.08);
 }
 
+/* Hover effect for the folder icon */
+.project-card:hover .folder-icon {
+    color: var(--accent-cyan);
+    filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.6));
+    transform: scale(1.1);
+}
+.folder-icon {
+    transition: all 0.3s ease;
+}
+
 /* Category Badge */
 .project-category-badge {
     display: inline-block;
