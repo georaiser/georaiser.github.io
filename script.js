@@ -244,6 +244,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Trigger initial filter state on page load
+    const activeFilter = document.querySelector('.filter-btn.active');
+    if (activeFilter) {
+        activeFilter.click();
+    }
+
 
     // ================================================================
     // 8. SMOOTH SCROLLING
