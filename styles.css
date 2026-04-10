@@ -615,65 +615,82 @@ body {
     font-size: 0.75rem;
 }
 
-/* --- Badge entrance + float animations --- */
-/* Each badge: enters first, then floats */
+/* --- Pentagon layout: 5 badges evenly distributed around the sphere ---
+   12 o'clock  →  badge-1  (AI / Vision)
+    2 o'clock  →  badge-2  (Remote Sensing)
+    5 o'clock  →  badge-4  (Geomatics)
+    7 o'clock  →  badge-3  (Full Stack)
+   10 o'clock  →  badge-5  (Modern Physics)
+   -------------------------------------------------------------------- */
 
-.badge-1 {
-    top: 5%;
-    left: 0;
+.badge-1 {                       /* ↑ top-center */
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
     border-color: rgba(139, 92, 246, 0.4);
     color: var(--accent-purple);
     animation:
-        badge-enter 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s both,
-        badge-float  4s ease-in-out                          1.2s infinite;
+        badge-enter-center 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s  both,
+        badge-float-center  4s  ease-in-out                          1.2s infinite;
 }
-.badge-1:hover { border-color: var(--accent-purple); box-shadow: 0 0 20px rgba(139,92,246,0.4); }
+.badge-1:hover { border-color: var(--accent-purple); box-shadow: 0 0 20px rgba(139,92,246,0.4); transform: translateX(-50%) scale(1.08) translateY(-3px) !important; }
 
-.badge-2 {
-    top: 35%;
-    right: 0%;
+.badge-2 {                       /* ↗ upper-right */
+    top: 25%;
+    right: -2%;
     border-color: rgba(16, 185, 129, 0.4);
     color: var(--accent-green);
     animation:
         badge-enter 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.85s both,
-        badge-float  5s ease-in-out                          1.55s infinite;
+        badge-float  5s  ease-in-out                          1.55s infinite;
 }
 .badge-2:hover { border-color: var(--accent-green); box-shadow: 0 0 20px rgba(16,185,129,0.4); }
 
-.badge-3 {
+.badge-4 {                       /* ↘ lower-right */
     bottom: 20%;
-    left: 2%;
-    border-color: rgba(6, 182, 212, 0.4);
-    color: var(--accent-cyan);
-    animation:
-        badge-enter 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 1.1s both,
-        badge-float  4.5s ease-in-out                        1.8s infinite;
-}
-.badge-3:hover { border-color: var(--accent-cyan); box-shadow: 0 0 20px rgba(6,182,212,0.4); }
-
-.badge-4 {
-    bottom: 5%;
-    right: 5%;
+    right: -2%;
     border-color: rgba(245, 158, 11, 0.4);
     color: var(--accent-orange);
     animation:
-        badge-enter 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 1.35s both,
-        badge-float  5.5s ease-in-out                        2.05s infinite;
+        badge-enter 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 1.1s  both,
+        badge-float  5.5s ease-in-out                         1.8s  infinite;
 }
 .badge-4:hover { border-color: var(--accent-orange); box-shadow: 0 0 20px rgba(245,158,11,0.4); }
 
-.badge-5 {
-    top: 65%;
-    right: -2%;
+.badge-3 {                       /* ↙ lower-left */
+    bottom: 20%;
+    left: -2%;
+    border-color: rgba(6, 182, 212, 0.4);
+    color: var(--accent-cyan);
+    animation:
+        badge-enter 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 1.35s both,
+        badge-float  4.5s ease-in-out                         2.05s infinite;
+}
+.badge-3:hover { border-color: var(--accent-cyan); box-shadow: 0 0 20px rgba(6,182,212,0.4); }
+
+.badge-5 {                       /* ↖ upper-left */
+    top: 25%;
+    left: -2%;
     border-color: rgba(245, 158, 11, 0.5);
     color: var(--accent-orange);
     background: rgba(12, 16, 23, 0.9);
     font-size: 0.76rem;
     animation:
         badge-enter 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 1.6s both,
-        badge-float  6s ease-in-out                          2.3s infinite;
+        badge-float  6s   ease-in-out                         2.3s infinite;
 }
 .badge-5:hover { border-color: var(--accent-orange); box-shadow: 0 0 20px rgba(245,158,11,0.4); }
+
+/* Float variant for the centered top badge (preserves translateX offset) */
+@keyframes badge-enter-center {
+    0%   { opacity: 0; transform: translateX(-50%) translateY(20px) scale(0.8); }
+    60%  { opacity: 1; transform: translateX(-50%) translateY(-4px) scale(1.05); }
+    100% { opacity: 1; transform: translateX(-50%) translateY(0)    scale(1); }
+}
+@keyframes badge-float-center {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(-8px); }
+}
 
 /* Badge entrance keyframe — bouncy pop-in */
 @keyframes badge-enter {
