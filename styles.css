@@ -400,6 +400,23 @@ body {
     50% { opacity: 0; }
 }
 
+.hero-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+    letter-spacing: 0.3px;
+}
+
+.hero-location i {
+    color: var(--accent-cyan);
+    font-size: 0.8rem;
+}
+
 .hero-quote {
     font-size: 1rem;
     color: var(--text-secondary);
