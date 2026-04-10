@@ -978,6 +978,29 @@ body {
     background: rgba(16, 185, 129, 0.03);
 }
 
+/* Upcoming entry (enrolled, not yet started) */
+.dot-upcoming {
+    background: var(--accent-orange);
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.7);
+    animation: dot-pulse-upcoming 2s ease-in-out infinite;
+}
+
+@keyframes dot-pulse-upcoming {
+    0%, 100% { box-shadow: 0 0 10px rgba(245, 158, 11, 0.4); }
+    50%       { box-shadow: 0 0 22px rgba(245, 158, 11, 0.85); }
+}
+
+.timeline-upcoming {
+    border-color: rgba(245, 158, 11, 0.25);
+    background: rgba(245, 158, 11, 0.03);
+}
+
+.timeline-date-upcoming {
+    color: var(--accent-orange) !important;
+    background: rgba(245, 158, 11, 0.08) !important;
+    border-color: rgba(245, 158, 11, 0.25) !important;
+}
+
 .timeline-date {
     display: inline-block;
     font-family: var(--font-mono);
