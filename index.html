@@ -3,17 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jorge Rodríguez | Geospatial Data Scientist & Full Stack Developer</title>
+    <title>Jorge Rodríguez | Geospatial AI & Full Stack Engineer</title>
+    <meta name="description" content="Jorge Rodríguez (GeoRaiser) — Geospatial Data Scientist, Remote Sensing Engineer & AI specialist. Expert in Computer Vision, Deep Learning, and Full Stack Development. Based in Chile.">
+    <meta property="og:title" content="Jorge Rodríguez | GeoRaiser">
+    <meta property="og:description" content="Geospatial Data Scientist · Remote Sensing · AI / Computer Vision · Full Stack Developer · Chile">
+    <meta property="og:url" content="https://georaiser.github.io">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Jorge Rodríguez | GeoRaiser">
+    <meta name="twitter:description" content="Geospatial Data Scientist · Remote Sensing · AI / Computer Vision · Full Stack Developer">
+    <meta name="author" content="Jorge Rodríguez">
+    <meta name="keywords" content="Geospatial, Remote Sensing, AI, Computer Vision, Deep Learning, Full Stack, Python, QGIS, PyTorch, Chile">
+
     <!-- Modern Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
 
     <!-- Background Animated Gradients -->
     <div class="bg-mesh">
@@ -23,36 +36,102 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">Geo<span>Raiser</span></div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact" class="btn-nav">Contact Me</a></li>
+    <nav class="navbar" id="navbar">
+        <a href="#" class="logo">Geo<span>Raiser</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about" class="nav-item">About</a></li>
+            <li><a href="#skills" class="nav-item">Skills</a></li>
+            <li><a href="#journey" class="nav-item">Journey</a></li>
+            <li><a href="#projects" class="nav-item">Projects</a></li>
+            <li><a href="#contact" class="btn-nav">Contact</a></li>
         </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <ul>
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#skills" class="mobile-link">Skills</a></li>
+            <li><a href="#journey" class="mobile-link">Journey</a></li>
+            <li><a href="#projects" class="mobile-link">Projects</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <header class="hero">
-        <div class="container hero-content">
-            <h2 class="subtitle">Hello, I'm</h2>
-            <h1 class="main-title">Jorge Rodríguez</h1>
-            <div class="typewriter-container">
-                <span class="typewriter-text" id="typewriter"></span><span class="cursor">|</span>
-            </div>
-            
-            <p class="hero-quote">
-                "Innovate at the confluence of AI, geospatial technology and software engineering to create impactful solutions to tomorrow's challenges, unlock insights and drive innovation."
-            </p>
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <h2 class="subtitle">Hello, I'm</h2>
+                <h1 class="main-title">Jorge Rodríguez</h1>
+                <div class="typewriter-container">
+                    <span class="typewriter-text" id="typewriter"></span><span class="cursor">|</span>
+                </div>
 
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="https://github.com/georaiser" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/jrodrigueze/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <p class="hero-quote">
+                    "Innovate at the confluence of AI, geospatial technology and software engineering to create impactful solutions, unlock spatial intelligence and drive real-world innovation."
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary" id="hero-cta-work">View My Work</a>
+                    <a href="#contact" class="btn btn-outline" id="hero-cta-contact">Get In Touch</a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/georaiser" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jrodrigueze/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Animated Geo Visual -->
+            <div class="hero-visual" aria-hidden="true">
+                <div class="geo-sphere">
+                    <div class="orbit orbit-1"></div>
+                    <div class="orbit orbit-2"></div>
+                    <div class="orbit orbit-3"></div>
+                    <div class="globe-core">
+                        <i class="fas fa-globe-americas globe-icon"></i>
+                    </div>
+                </div>
+                <div class="floating-badge badge-1"><i class="fas fa-brain"></i> AI / Vision</div>
+                <div class="floating-badge badge-2"><i class="fas fa-satellite-dish"></i> Remote Sensing</div>
+                <div class="floating-badge badge-3"><i class="fas fa-code"></i> Full Stack</div>
+                <div class="floating-badge badge-4"><i class="fas fa-map-marked-alt"></i> Geomatics</div>
             </div>
         </div>
     </header>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-up" id="stat-repos">
+                    <span class="stat-number" data-target="39">0</span><span class="stat-suffix">+</span>
+                    <p class="stat-label">GitHub Repos</p>
+                </div>
+                <div class="stat-item fade-up" id="stat-projects">
+                    <span class="stat-number" data-target="10">0</span><span class="stat-suffix">+</span>
+                    <p class="stat-label">AI / CV Projects</p>
+                </div>
+                <div class="stat-item fade-up" id="stat-years">
+                    <span class="stat-number" data-target="4">0</span><span class="stat-suffix">+</span>
+                    <p class="stat-label">Years of Practice</p>
+                </div>
+                <div class="stat-item fade-up" id="stat-domains">
+                    <span class="stat-number" data-target="3">0</span><span class="stat-suffix"></span>
+                    <p class="stat-label">Core Domains</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section id="about" class="section">
@@ -61,11 +140,37 @@
                 <span class="section-eyebrow">Discover</span>
                 <h2 class="section-title">About Me</h2>
             </div>
-            
-            <div class="about-grid fade-up">
-                <div class="about-text glass-card">
-                    <p>I am a passionate engineer blending expertise in <strong>Geomatics, Remote Sensing, Artificial Intelligence</strong>, and <strong>Full Stack Development</strong>. My passion lies in leveraging cutting-edge technologies to solve complex real-world problems, specifically in the realms of geospatial analysis.</p>
-                    <p>With an educational background and deep technical curiosity, I specialize in translating spatial data into actionable intelligence, building enterprise software to support it, and pushing boundaries in deep learning.</p>
+
+            <div class="about-grid">
+                <div class="about-text glass-card fade-up">
+                    <p>I am an engineer at the intersection of <strong>Geomatics, Remote Sensing, Artificial Intelligence</strong>, and <strong>Full Stack Development</strong> — based in <strong>Chile</strong>. My passion lies in leveraging cutting-edge technologies to solve complex real-world problems in spatial analysis, computer vision, and enterprise software.</p>
+                    <p>With deep technical curiosity and hands-on experience across 39+ repositories, I specialize in <strong>translating satellite and aerial imagery into actionable intelligence</strong>, building robust backend systems, and pushing boundaries in deep learning — from object detection benchmarks to RAG-based AI assistants.</p>
+                    <p>My approach bridges the physical and digital worlds: combining geospatial domain expertise with modern AI frameworks to deliver solutions that are both scientifically rigorous and production-ready.</p>
+                    <div class="about-tags">
+                        <span class="domain-tag tag-ai"><i class="fas fa-brain"></i> Deep Learning</span>
+                        <span class="domain-tag tag-geo"><i class="fas fa-satellite-dish"></i> Remote Sensing</span>
+                        <span class="domain-tag tag-web"><i class="fas fa-layer-group"></i> Full Stack</span>
+                        <span class="domain-tag tag-geo"><i class="fas fa-map-marked-alt"></i> Geomatics</span>
+                        <span class="domain-tag tag-ai"><i class="fas fa-robot"></i> GenAI / RAG</span>
+                    </div>
+                </div>
+
+                <div class="about-cards">
+                    <div class="mini-card glass-card fade-up">
+                        <div class="mini-card-icon icon-ai"><i class="fas fa-brain"></i></div>
+                        <h4>AI & Vision</h4>
+                        <p>YOLO, Mask R-CNN, DeepSORT, LangChain, RAG systems, computer vision pipelines</p>
+                    </div>
+                    <div class="mini-card glass-card fade-up">
+                        <div class="mini-card-icon icon-geo"><i class="fas fa-satellite"></i></div>
+                        <h4>Geospatial</h4>
+                        <p>Satellite imagery analysis, QGIS, ArcGIS, PostGIS, GDAL, drone imagery</p>
+                    </div>
+                    <div class="mini-card glass-card fade-up">
+                        <div class="mini-card-icon icon-web"><i class="fas fa-code"></i></div>
+                        <h4>Engineering</h4>
+                        <p>Java, Python, Node.js, Spring Boot, PostgreSQL, REST APIs, MVC</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -81,52 +186,156 @@
 
             <div class="skills-grid fade-up">
                 <!-- AI / ML -->
-                <div class="skill-category glass-card">
+                <div class="skill-category glass-card skill-ai">
                     <div class="skill-icon"><i class="fas fa-brain"></i></div>
                     <h3>AI & Machine Learning</h3>
                     <div class="skill-tags">
                         <span>PyTorch</span>
                         <span>TensorFlow</span>
                         <span>OpenCV</span>
-                        <span>Deep Learning</span>
-                        <span>Computer Vision</span>
-                        <span>Object Detection</span>
+                        <span>YOLO v11</span>
+                        <span>Faster R-CNN</span>
+                        <span>Mask R-CNN</span>
+                        <span>DeepSORT</span>
+                        <span>ByteTrack</span>
+                        <span>LangChain</span>
+                        <span>RAG</span>
+                        <span>HuggingFace</span>
+                        <span>Scikit-learn</span>
                     </div>
                 </div>
 
-                <!-- Geospatial -->
-                <div class="skill-category glass-card">
-                    <div class="skill-icon"><i class="fas fa-globe-americas"></i></div>
-                    <h3>Geospatial</h3>
+                <!-- Geospatial / Remote Sensing -->
+                <div class="skill-category glass-card skill-geo">
+                    <div class="skill-icon geo-icon"><i class="fas fa-satellite-dish"></i></div>
+                    <h3>Remote Sensing & Geomatics</h3>
                     <div class="skill-tags">
                         <span>QGIS</span>
                         <span>ArcGIS</span>
                         <span>PostGIS</span>
                         <span>GDAL</span>
-                        <span>Remote Sensing</span>
+                        <span>Rasterio</span>
+                        <span>Sentinel-2</span>
+                        <span>Google Earth Engine</span>
+                        <span>SAM</span>
+                        <span>Drone Imagery</span>
+                        <span>Change Detection</span>
+                        <span>Image Classification</span>
                         <span>Spatial Analysis</span>
                     </div>
                 </div>
 
                 <!-- Full Stack -->
-                <div class="skill-category glass-card">
-                    <div class="skill-icon"><i class="fas fa-code"></i></div>
+                <div class="skill-category glass-card skill-web">
+                    <div class="skill-icon web-icon"><i class="fas fa-code"></i></div>
                     <h3>Software Engineering</h3>
                     <div class="skill-tags">
                         <span>Java & Spring Boot</span>
                         <span>Python</span>
                         <span>Node.js / Express</span>
-                        <span>HTML/CSS/JS</span>
+                        <span>HTML / CSS / JS</span>
                         <span>PostgreSQL</span>
                         <span>REST APIs</span>
+                        <span>MVC Architecture</span>
+                        <span>Microservices</span>
+                        <span>JWT Auth</span>
+                        <span>Git & GitHub</span>
+                        <span>Docker</span>
+                    </div>
+                </div>
+
+                <!-- Data Science & Tools -->
+                <div class="skill-category glass-card skill-data">
+                    <div class="skill-icon data-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Data Science & Tools</h3>
+                    <div class="skill-tags">
+                        <span>Pandas</span>
+                        <span>NumPy</span>
+                        <span>Matplotlib</span>
+                        <span>Jupyter</span>
+                        <span>Vector DBs</span>
+                        <span>Data Pipelines</span>
+                        <span>Benchmarking</span>
+                        <span>Statistical Analysis</span>
+                        <span>Data Visualization</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Journey / Timeline Section -->
+    <section id="journey" class="section">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="section-eyebrow">Experience</span>
+                <h2 class="section-title">My Journey</h2>
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item fade-up">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">2022 — 2023</span>
+                        <h3>Deep Learning Foundations</h3>
+                        <p>Began an intensive journey into deep learning and computer vision. Built projects in vehicle type recognition, flower classification, fruit detection, and emergency vehicle detection — establishing a strong foundation in CNNs, transfer learning, and model evaluation.</p>
+                        <div class="timeline-tags">
+                            <span>PyTorch</span><span>TensorFlow</span><span>CNN</span><span>Transfer Learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-up">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">2023 — 2024</span>
+                        <h3>Geospatial AI & Remote Sensing</h3>
+                        <p>Specialized in applying AI to geospatial and remote sensing challenges. Developed drone image segmentation pipelines, geospatial object detection systems, and satellite image analysis workflows. Integrated GIS tools with machine learning to bridge physical and digital worlds.</p>
+                        <div class="timeline-tags">
+                            <span>Remote Sensing</span><span>QGIS</span><span>GDAL</span><span>Drone Imagery</span><span>Segmentation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-up">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content glass-card">
+                        <span class="timeline-date">2024</span>
+                        <h3>Enterprise AI Systems & Full Stack Engineering</h3>
+                        <p>Engineered enterprise-grade systems: OmniVisionAI pipeline, multi-object tracking with Faster R-CNN + DeepSORT, instance segmentation benchmarks, and comprehensive detection comparisons (YOLO, SSD, RetinaNet). Simultaneously built full-stack platforms with Java Spring Boot and Node.js following clean MVC architecture.</p>
+                        <div class="timeline-tags">
+                            <span>Faster R-CNN</span><span>DeepSORT</span><span>Mask R-CNN</span><span>Spring Boot</span><span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-up">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot dot-active"></div>
+                    </div>
+                    <div class="timeline-content glass-card timeline-active">
+                        <span class="timeline-date">2025 — Present</span>
+                        <h3>Generative AI & Advanced Engineering</h3>
+                        <p>Expanding into Generative AI with RAG-based assistants and LangChain integrations. Building production-ready full-stack e-commerce platforms combining AI backends with modern web architectures. Continuously benchmarking state-of-the-art models (YOLO v11, ByteTrack) and exploring the frontier of geospatial intelligence.</p>
+                        <div class="timeline-tags">
+                            <span>LangChain</span><span>RAG</span><span>YOLO v11</span><span>ByteTrack</span><span>PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
-    <section id="projects" class="section">
+    <section id="projects" class="section bg-darker">
         <div class="container">
             <div class="section-header fade-up">
                 <span class="section-eyebrow">Portfolio</span>
@@ -135,28 +344,83 @@
 
             <!-- Filters -->
             <div class="project-filters fade-up">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="ai">AI / Vision</button>
-                <button class="filter-btn" data-filter="geo">Geospatial</button>
-                <button class="filter-btn" data-filter="web">Full Stack</button>
+                <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
+                <button class="filter-btn" data-filter="ai" id="filter-ai">AI / Vision</button>
+                <button class="filter-btn" data-filter="geo" id="filter-geo">Geospatial</button>
+                <button class="filter-btn" data-filter="web" id="filter-web">Full Stack</button>
             </div>
 
             <!-- Project Grid -->
             <div class="project-grid fade-up" id="projectGrid">
-                
-                <!-- CommerceManager -->
-                <div class="project-card glass-card" data-category="web">
+
+                <!-- OmniVisionAI V1 -->
+                <div class="project-card glass-card" data-category="ai">
                     <div class="project-content">
                         <div class="project-header">
                             <i class="far fa-folder-open folder-icon"></i>
                             <div class="project-links">
-                                <a href="https://github.com/georaiser/CommerceManager" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/georaiser/OmniVisionAI_V1" target="_blank" rel="noopener noreferrer" aria-label="OmniVisionAI_V1 on GitHub"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
-                        <h3 class="project-title">CommerceManager</h3>
-                        <p class="project-description">A robust E-Commerce web platform built with Node.js, Express, PostgreSQL, and a rigorous MVC architecture featuring dynamic server-side rendering.</p>
+                        <div class="project-category-badge badge-ai">AI / Vision</div>
+                        <h3 class="project-title">OmniVisionAI V1</h3>
+                        <p class="project-description">Comprehensive enterprise computer vision pipeline combining multi-modal detection, tracking, and segmentation modules into a unified AI system. Designed for real-world industrial deployment at scale.</p>
                         <div class="project-tech">
-                            <span>JavaScript</span><span>Node.js</span><span>PostgreSQL</span>
+                            <span>Python</span><span>PyTorch</span><span>Computer Vision</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI RAG Assistant -->
+                <div class="project-card glass-card" data-category="ai">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="far fa-folder-open folder-icon"></i>
+                            <div class="project-links">
+                                <a href="https://github.com/georaiser/AI_RAG_Assistant" target="_blank" rel="noopener noreferrer" aria-label="AI_RAG_Assistant on GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-category-badge badge-ai">GenAI / RAG</div>
+                        <h3 class="project-title">AI RAG Assistant</h3>
+                        <p class="project-description">Retrieval-Augmented Generation (RAG) system enabling intelligent document querying and context-aware AI responses. Integrates vector embeddings with language models for enterprise knowledge retrieval.</p>
+                        <div class="project-tech">
+                            <span>Python</span><span>LangChain</span><span>RAG</span><span>Vector DB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Detection & Tracking -->
+                <div class="project-card glass-card" data-category="ai">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="far fa-folder-open folder-icon"></i>
+                            <div class="project-links">
+                                <a href="https://github.com/georaiser/17_AdvancedDetectAndTrack" target="_blank" rel="noopener noreferrer" aria-label="17_AdvancedDetectAndTrack on GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-category-badge badge-ai">AI / Vision</div>
+                        <h3 class="project-title">Advanced Detection & Tracking</h3>
+                        <p class="project-description">State-of-the-art multi-object detection and tracking fusing YOLOX with the ByteTrack algorithm, enabling robust, high-speed tracking across complex video streams with superior occlusion handling.</p>
+                        <div class="project-tech">
+                            <span>YOLOX</span><span>ByteTrack</span><span>Python</span><span>Jupyter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Object Detection Benchmark -->
+                <div class="project-card glass-card" data-category="ai">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="far fa-folder-open folder-icon"></i>
+                            <div class="project-links">
+                                <a href="https://github.com/georaiser/16_ObjectDetectionBenchmark" target="_blank" rel="noopener noreferrer" aria-label="16_ObjectDetectionBenchmark on GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-category-badge badge-ai">AI / Vision</div>
+                        <h3 class="project-title">Object Detection Benchmark</h3>
+                        <p class="project-description">Comprehensive comparative analysis of YOLO v11, Faster R-CNN, RetinaNet, and SSD — evaluating accuracy, inference speed, and computational cost to create reproducible model-selection guidance.</p>
+                        <div class="project-tech">
+                            <span>YOLO v11</span><span>Faster R-CNN</span><span>RetinaNet</span><span>PyTorch</span>
                         </div>
                     </div>
                 </div>
@@ -167,13 +431,14 @@
                         <div class="project-header">
                             <i class="far fa-folder-open folder-icon"></i>
                             <div class="project-links">
-                                <a href="https://github.com/georaiser/15_ObjectTracking" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/georaiser/15_ObjectTracking" target="_blank" rel="noopener noreferrer" aria-label="15_ObjectTracking on GitHub"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
-                        <h3 class="project-title">Object Tracking System</h3>
-                        <p class="project-description">Advanced multi-object tracking combining Faster R-CNN detection with the DeepSORT algorithm, featuring intelligent counting with virtual line crossing detection.</p>
+                        <div class="project-category-badge badge-ai">AI / Vision</div>
+                        <h3 class="project-title">Object Tracking System <span class="star-badge">⭐</span></h3>
+                        <p class="project-description">Multi-object tracking combining Faster R-CNN with the DeepSORT algorithm and intelligent counting via virtual line crossing detection. Community starred with 1★ and 2 forks — applicable to traffic monitoring and surveillance.</p>
                         <div class="project-tech">
-                            <span>Python</span><span>PyTorch</span><span>Computer Vision</span>
+                            <span>Python</span><span>PyTorch</span><span>Faster R-CNN</span><span>DeepSORT</span>
                         </div>
                     </div>
                 </div>
@@ -184,47 +449,32 @@
                         <div class="project-header">
                             <i class="far fa-folder-open folder-icon"></i>
                             <div class="project-links">
-                                <a href="https://github.com/georaiser/14_VisualObjectRecognition" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/georaiser/14_VisualObjectRecognition" target="_blank" rel="noopener noreferrer" aria-label="14_VisualObjectRecognition on GitHub"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
-                        <h3 class="project-title">Instance Segmentation Benchmark</h3>
-                        <p class="project-description">Comprehensive pixel-level object segmentation using Mask R-CNN and Faster R-CNN architectures trained on the Pascal VOC dataset.</p>
+                        <div class="project-category-badge badge-ai">AI / Vision</div>
+                        <h3 class="project-title">Instance Segmentation Benchmark <span class="star-badge">⭐⭐</span></h3>
+                        <p class="project-description">Pixel-level instance segmentation with Mask R-CNN & Faster R-CNN on Pascal VOC. Achieved &gt;0.7 IoU across 20 object categories. Community recognized with 2★ and 1 fork.</p>
                         <div class="project-tech">
-                            <span>Mask R-CNN</span><span>Python</span><span>YOLO v11</span>
+                            <span>Mask R-CNN</span><span>Python</span><span>Pascal VOC</span><span>YOLO v11</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Enterprise Vision System -->
-                <div class="project-card glass-card" data-category="ai">
+                <!-- Geospatial Detection -->
+                <div class="project-card glass-card" data-category="geo ai">
                     <div class="project-content">
                         <div class="project-header">
                             <i class="far fa-folder-open folder-icon"></i>
                             <div class="project-links">
-                                <i class="fas fa-lock" title="Private Repository"></i>
+                                <a href="https://github.com/georaiser/GeospatialDetection" target="_blank" rel="noopener noreferrer" aria-label="GeospatialDetection on GitHub"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
-                        <h3 class="project-title">OmniVisionAI Enterprise</h3>
-                        <p class="project-description">A proprietary, enterprise-grade state-of-the-art vision AI system similar to OmniVisionAI_V1, optimized for private industrial deployments.</p>
+                        <div class="project-category-badge badge-geo">Geospatial</div>
+                        <h3 class="project-title">Geospatial Object Detection</h3>
+                        <p class="project-description">AI-driven object detection applied to geographic and satellite imagery datasets, enabling automated identification and classification of geospatial features from aerial and remote sensing data sources.</p>
                         <div class="project-tech">
-                            <span>Deep Learning</span><span>Computer Vision</span><span>Architecture</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Java Spring Boot -->
-                <div class="project-card glass-card" data-category="web">
-                    <div class="project-content">
-                        <div class="project-header">
-                            <i class="far fa-folder-open folder-icon"></i>
-                            <div class="project-links">
-                                <a href="https://github.com/georaiser/AlkeWallet_JavaSpringBoot" target="_blank"><i class="fab fa-github"></i></a>
-                            </div>
-                        </div>
-                        <h3 class="project-title">AlkeWallet Banking API</h3>
-                        <p class="project-description">Secure and scalable backend implementation of a financial wallet using Java and Spring Boot, establishing a modular enterprise framework.</p>
-                        <div class="project-tech">
-                            <span>Java</span><span>Spring Boot</span><span>REST</span>
+                            <span>Python</span><span>Remote Sensing</span><span>Object Detection</span>
                         </div>
                     </div>
                 </div>
@@ -235,32 +485,85 @@
                         <div class="project-header">
                             <i class="far fa-folder-open folder-icon"></i>
                             <div class="project-links">
-                                <a href="https://github.com/georaiser/09_Drone_Segmentation" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://github.com/georaiser/09_Drone_Segmentation" target="_blank" rel="noopener noreferrer" aria-label="09_Drone_Segmentation on GitHub"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
+                        <div class="project-category-badge badge-geo">Geospatial</div>
                         <h3 class="project-title">Drone Imaging Segmentation</h3>
-                        <p class="project-description">Applied computer vision techniques for intelligent extraction of features and spatial boundaries from high-resolution drone imagery datasets.</p>
+                        <p class="project-description">Computer vision techniques applied to high-resolution drone imagery for intelligent extraction of features and spatial boundaries, enabling automated geospatial feature classification and land-use analysis.</p>
                         <div class="project-tech">
-                            <span>Jupyter</span><span>Remote Sensing</span><span>CV</span>
+                            <span>Jupyter</span><span>Remote Sensing</span><span>Segmentation</span><span>CV</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- CommerceManager -->
+                <div class="project-card glass-card" data-category="web">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="far fa-folder-open folder-icon"></i>
+                            <div class="project-links">
+                                <a href="https://github.com/georaiser/CommerceManager" target="_blank" rel="noopener noreferrer" aria-label="CommerceManager on GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-category-badge badge-web">Full Stack</div>
+                        <h3 class="project-title">CommerceManager</h3>
+                        <p class="project-description">Production-grade E-Commerce platform with Node.js, Express, PostgreSQL, and MVC architecture. Features JWT authentication, dual SQL/ORM modes, SSR with Handlebars, and an inventory-aware transactional cart system.</p>
+                        <div class="project-tech">
+                            <span>JavaScript</span><span>Node.js</span><span>PostgreSQL</span><span>Express</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AlkeWallet Spring Boot -->
+                <div class="project-card glass-card" data-category="web">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="far fa-folder-open folder-icon"></i>
+                            <div class="project-links">
+                                <a href="https://github.com/georaiser/AlkeWallet_JavaSpringBoot" target="_blank" rel="noopener noreferrer" aria-label="AlkeWallet_JavaSpringBoot on GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-category-badge badge-web">Full Stack</div>
+                        <h3 class="project-title">AlkeWallet Banking API</h3>
+                        <p class="project-description">Secure, scalable financial wallet backend with Java and Spring Boot. Implements a modular enterprise framework with RESTful endpoints for transaction management, account operations, and secure authentication.</p>
+                        <div class="project-tech">
+                            <span>Java</span><span>Spring Boot</span><span>REST API</span><span>JEE</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="more-projects fade-up">
+                <a href="https://github.com/georaiser?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="view-all-repos">
+                    <i class="fab fa-github"></i> View All 39 Repositories
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action / Footer -->
+    <!-- Contact / Footer -->
     <footer id="contact" class="footer section">
         <div class="container fade-up text-center">
+            <span class="section-eyebrow">Get In Touch</span>
             <h2 class="section-title">Let's Build Something Great</h2>
-            <p>I'm always open to discussing advanced technology intersection, enterprise architecture, or new exciting geospatial/AI challenges.</p>
-            <a href="mailto:contact@example.com" class="btn btn-primary mt-4">Say Hello</a>
-            
-            <div class="footer-social">
-                <a href="https://github.com/georaiser" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/jrodrigueze/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <p class="contact-text">I'm always open to discussing AI/geospatial technology intersections, enterprise architecture, remote sensing challenges, or exciting new collaborative projects. Let's connect.</p>
+
+            <div class="contact-actions">
+                <a href="https://www.linkedin.com/in/jrodrigueze/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="contact-linkedin">
+                    <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                </a>
+                <a href="https://github.com/georaiser" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="contact-github">
+                    <i class="fab fa-github"></i> View GitHub
+                </a>
             </div>
-            <p class="copyright">Designed and Built for Jorge Rodríguez.</p>
+
+            <div class="footer-social">
+                <a href="https://github.com/georaiser" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jrodrigueze/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="copyright">Designed &amp; Built by Jorge Rodríguez · GeoRaiser · Chile 🇨🇱</p>
         </div>
     </footer>
 
