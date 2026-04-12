@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Modern Physics Explorer",
         "Geospatial Data Scientist",
         "Computer Vision Researcher",
+        "Artificial Intelligence Enthusiast",
         "Full Stack Developer",
     ];
     let i = 0;
