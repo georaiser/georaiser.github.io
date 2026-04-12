@@ -4,12 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. TYPEWRITER EFFECT
     // ================================================================
     const phrases = [
-        "MSc Remote Sensing · Geomatics Eng.",
+        "MSc Remote Sensing",
+        "Geomatics Specialist",
         "Modern Physics Explorer",
         "Geospatial Data Scientist",
         "Computer Vision Researcher",
         "Artificial Intelligence Enthusiast",
-        "Full Stack Developer",
+        "Full Stack Developer"
     ];
     let i = 0;
     let j = 0;
